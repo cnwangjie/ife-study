@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <script>
+    let a2 = new Observer({
+      name: {
+        firstName: 'shaofeng',
+        lastName: 'liang'
+      },
+      age: 25
+    })
+
+    a2.$watch('name', function (newName) {
+      console.log('我的姓名发生了变化，可能是姓氏变了，也可能是名字变了。')
+    })
+
+    a2.data.name.firstName = 'hahaha'
+    // 输出：我的姓名发生了变化，可能是姓氏变了，也可能是名字变了。
+    a2.data.name.lastName = 'blablabla'
+    // 输出：我的姓名发生了变化，可能是姓氏变了，也可能是名字变了。
+    </script>
+  </body>
+</html>
